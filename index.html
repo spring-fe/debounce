@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>throttle debounce</title>
+  <script type="text/javascript" src="lib/jquery-3.1.1.js"></script>
+  <script type="text/javascript" src="js/debounce.js"></script>
+  <style>
+  	div{
+  		margin: 50px;
+  	}
+  	input{
+  		padding: 5px 5px;
+  		color: #494949;
+  		background-color: #fff;
+  		border-radius: 2px;
+  		font-size: 16px;
+  		border: 1px solid #bd3191;
+  		width: 400px;
+  		height: 20px;
+  		line-height: 20px;
+
+  	}
+  	input:focus{
+  		border-color: #bd3191;
+  		outline: 0;
+  		box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(193,0,56,0.6);
+  	}
+  </style>
+</head>
+<body>
+  <div>
+  	<input placeholder="search">
+  	<script>
+  		$("input").keyup($.debounce(function(){
+  			alert('debounce');
+  		},1000,true))
+  	</script>
+  </div>
+</body>
+</html>
